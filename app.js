@@ -11,13 +11,13 @@ const config = require('./config/database');
 mongoose.connect(config.database);
 
 //shows a successful connection to the database
-mongoose.connection.on('connected', ()=> {
+mongoose.connection.on('connected', () => {
 
     console.log('connected to database' + config.database);
 });
 
 //shows if there is a failure to the database
-mongoose.connection.on('error', (err)=> {
+mongoose.connection.on('error', (err) => {
 
     console.log('database error:' + err);
 });
@@ -26,12 +26,12 @@ mongoose.connection.on('error', (err)=> {
 
 const app = express();
 
-const users = require('./routes/users'); 
+const users = require('./routes/users');
 
 
 const port = 3000;
 
-app.use(cors()); 
+app.use(cors());
 
 // set static folder
 
@@ -58,5 +58,5 @@ var theDate = new Date().toISOString();
 //start router
 app.listen(port, () => {
 
-    console.log('the server has started on port: '+port + ' ' + theDate);
+    console.log('the server has started on port: ' + port + ' ' + theDate);
 })

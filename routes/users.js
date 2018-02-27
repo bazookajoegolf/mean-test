@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-const passport = require('passport')
+const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const User = require('../models/user');
@@ -62,7 +62,8 @@ router.post('/authenticate',(req, res, next) => {
 
                 res.json({
                     success: true, 
-                    token: 'JWT'+token,
+                    token: 'Bearer '+token,
+                   //token: token,
                     user: {
                         id: user._id,
                         name: user.name,
@@ -80,7 +81,7 @@ router.post('/authenticate',(req, res, next) => {
 
 //Profile route
 
-router.get('/profile',(req, res, next) => {
+router.get('/profile', passport.authenticate('jwt',{session:false}), (req, res, next) => {
     console.log("returning the profile route");
     //res.send('profile route');
     res.json({user:req.user})

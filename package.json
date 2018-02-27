@@ -14,8 +14,8 @@
     "cors": "*",
     "jsonwebtoken": "*",
     "body-parser": "*",
-    "passport": "*",
-    "passport-jwt": "*"
+    "passport": "0.4.0",
+    "passport-jwt": "3.0.1"
   },
   "author": "",
   "license": "ISC"
