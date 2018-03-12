@@ -8,16 +8,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">BAZ Handicap</a>
+          <a class="navbar-brand" [routerLink]="['/']">BAZ Handicap</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-left">
-            <li><a [routerLink]="['/']">Home</a></li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/']">Home</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li><a [routerLink]="['/login']">Login</a></li>
-            <li><a [routerLink]="['/register']">Register</a></li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

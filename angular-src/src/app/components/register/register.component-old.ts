@@ -15,33 +15,25 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private validateService: ValidateService
-    
+
     ) { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
-
+  
   onRegisterSubmit() {
     const user = {
       name: this.name,
-      email: this.email,
       username: this.username,
+      email: this.email,
       password: this.password
     }
-
-    // Required Fields
     if(!this.validateService.validateRegister(user)) {
-      console.log("fill in all fields");
-      return false;
-    }
-
-    // Validate Email
-    if(!this.validateService.validateEmail(user.email)) {
-      console.log("fill in valid email");
-      return false;
-    }
-
-    // Register user
 
   }
+
+  
+
+  }
+
 }
